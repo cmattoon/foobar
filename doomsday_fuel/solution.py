@@ -14,16 +14,41 @@ def idmatrix(n):
         m[i][i] = 1
     return m
 
-def m2p(matrix):
+def msort(m):
     """
-
-
+    Sorts a matrix into ___?
     """
-    for r, row in enumerate(matrix):
-        if sum(row) is 0:
-            # Absorbing states have p=1.0
-            matrix[r][r] = 1
-    return matrix
+    pass
+
+def iterm(m):
+    lr = len(m)
+    lc = len(m[0])
+    for r in xrange(lr):
+        for c in xrange(lc):
+            yield r, c, m[r][c]
+
+def add_absorbing_states(m):
+    """
+    A terminal state is represented by 'sum(row) is 0'
+
+    Replace these with P(i)=1
+    """
+    for r, c, v in iterm(m):
+        if sum(m[r]) is 0:
+            m[r][r] = 1
+    return m
+
+def msub(a, b):
+    """a - b"""
+    m = im(len(a))
+    for r, c, v in iterm(m):
+        m[r][c] = a[r][c] - b[r][c]
+    return m
+
+def partition(m):
+    """Return I, O, R, Q
+    """
+    pass
 
 def answer(m):
     pass
