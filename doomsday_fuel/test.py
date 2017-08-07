@@ -48,6 +48,22 @@ class SolutionTestCase(unittest.TestCase):
     def test_answer(self, m, exp):
         self.assertEquals(exp, solution.answer(m))
 
+    @data(
+        (1, [[1]]),
+        (2, [
+            [1, 0],
+            [0, 1]
+        ]),
+        (3,
+         [[1, 0, 0],
+          [0, 1, 0],
+          [0, 0, 1]
+         ]
+        )
+    )
+    @unpack
+    def test_idmatrix(self, n, exp):
+        self.assertEquals(exp, solution.idmatrix(n))
         
 if __name__ == '__main__':
     unittest.main()
