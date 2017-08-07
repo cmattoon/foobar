@@ -38,6 +38,10 @@ class SolutionTestCase(unittest.TestCase):
                 [0, 0, 0, 0, 0, 0]
             ],
             [0, 3, 2, 9, 14]
+        ),
+        (# Case 3
+            [ [1] ],
+            [1, 1]
         )
     )
     @unpack
