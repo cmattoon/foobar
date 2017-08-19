@@ -97,7 +97,7 @@ class SolutionTestCase(unittest.TestCase):
 
 
     @data(
-        (
+        (# Case 1
             [[0, 0, 0],
              [0, 0, 0],
              [0, 0, 0]
@@ -107,7 +107,7 @@ class SolutionTestCase(unittest.TestCase):
              [0, 0, 1]
             ]
         ),
-        (
+        (# Case 2
             [[0, 2, 3],
              [1, 0, 0],
              [0, 0, 0]],
@@ -121,6 +121,6 @@ class SolutionTestCase(unittest.TestCase):
     def test_absorbing_states(self, m1, m2):
         self.assertEquals(m2, solution.add_absorbing_states(m1))
 
-
+      
 if __name__ == '__main__':
     unittest.main()

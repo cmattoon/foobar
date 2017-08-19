@@ -32,6 +32,8 @@ def add_absorbing_states(m):
     A terminal state is represented by 'sum(row) is 0'
 
     Replace these with P(i)=1
+    
+    Do I necessarily want this? 
     """
     for r, c, v in iterm(m):
         if sum(m[r]) is 0:
@@ -49,6 +51,18 @@ def partition(m):
     """Return I, O, R, Q
     """
     pass
+
+def invertm(m):
+    """Invert m"""
+    pass
+
+def get_f(m):
+    """
+    Returns F for F = (I-Q)^-1
+    """
+    I = idmatrix(len(m))
+    Q = get_Q(m)
+    return invertm(msub(I-Q))
 
 def answer(m):
     pass
